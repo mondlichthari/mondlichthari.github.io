@@ -1,58 +1,280 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <title>Minako 的主页</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to right, #f9f9f9, #e0f7fa);
-      margin: 0;
-      padding: 0;
-      text-align: center;
-    }
-    header {
-      background-color: #00796b;
-      color: white;
-      padding: 20px;
-    }
-    nav {
-      margin: 15px 0;
-    }
-    nav a {
-      margin: 0 10px;
-      text-decoration: none;
-      color: #00796b;
-      font-weight: bold;
-    }
-    section {
-      padding: 40px;
-    }
-    footer {
-      background-color: #004d40;
-      color: white;
-      padding: 10px;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>幻想乡的分支终端 // Profile</title>
+    <style>
+        :root {
+            --bg-color: #0b0914;
+            --card-bg: rgba(22, 19, 38, 0.7);
+            --primary-glow: #ff41b4; /* 魔法少女粉 */
+            --secondary-glow: #00f0ff; /* 赛博青 */
+            --text-main: #f0f0f6;
+            --text-muted: #a0a0c0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* 背景装饰线条/粒子 */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: 
+                linear-gradient(90deg, rgba(255,65,180,0.03) 1px, transparent 1px),
+                linear-gradient(rgba(0,240,255,0.03) 1px, transparent 1px);
+            background-size: 20px 20px;
+            z-index: 0;
+        }
+
+        /* 动态霓虹光晕 */
+        .glow-sphere {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: var(--primary-glow);
+            filter: blur(120px);
+            opacity: 0.15;
+            z-index: 0;
+            animation: float 8s ease-in-out infinite alternate;
+        }
+        .glow-sphere.v2 {
+            background: var(--secondary-glow);
+            right: 10%;
+            bottom: 10%;
+            animation-delay: -4s;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(40px, 20px) scale(1.2); }
+        }
+
+        /* 主卡片容器 */
+        .container {
+            position: relative;
+            z-index: 10;
+            width: 90%;
+            max-width: 450px;
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 2px solid var(--primary-glow);
+            border-bottom: 2px solid var(--secondary-glow);
+            border-radius: 16px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+
+        /* 头像区域 */
+        .avatar-wrapper {
+            position: relative;
+            width: 110px;
+            height: 110px;
+            margin: 0 auto 20px;
+        }
+
+        .avatar-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-glow), var(--secondary-glow));
+            animation: rotate 6s linear infinite;
+            z-index: -1;
+        }
+
+        .avatar {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: #222;
+            object-fit: cover;
+            border: 3px solid #161326;
+        }
+
+        @keyframes rotate {
+            100% { transform: rotate(360deg); }
+        }
+
+        /* 文本样式 */
+        h1 {
+            font-size: 1.6rem;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            text-shadow: 0 0 10px rgba(255,65,180,0.5);
+        }
+
+        .subtitle {
+            font-size: 0.9rem;
+            color: var(--secondary-glow);
+            font-family: 'Courier New', Courier, monospace;
+            margin-bottom: 20px;
+        }
+
+        .bio {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        /* 标签墙 */
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 30px;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            padding: 4px 12px;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: var(--text-main);
+            transition: all 0.3s ease;
+        }
+
+        .tag:hover {
+            border-color: var(--primary-glow);
+            box-shadow: 0 0 8px rgba(255,65,180,0.3);
+            transform: translateY(-2px);
+        }
+
+        /* 链接列表 */
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .link-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .link-item::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 0; height: 100%; width: 0;
+            background: linear-gradient(90deg, rgba(0,240,255,0.1), transparent);
+            transition: width 0.3s ease;
+        }
+
+        .link-item:hover {
+            border-color: var(--secondary-glow);
+            box-shadow: 0 0 15px rgba(0,240,255,0.2);
+            transform: translateX(4px);
+        }
+
+        .link-item:hover::before {
+            width: 100%;
+        }
+
+        /* 底部状态 */
+        .footer-status {
+            margin-top: 30px;
+            font-size: 0.75rem;
+            color: #666688;
+            font-family: monospace;
+        }
+        
+        .pulse-dot {
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background: #00ff66;
+            border-radius: 50%;
+            margin-right: 4px;
+            box-shadow: 0 0 8px #00ff66;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            50% { opacity: 0.4; }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>欢迎来到 Minako 的主页</h1>
-    <p>这是我的 GitHub Pages 个人网站</p>
-  </header>
-  <nav>
-    <a href="#">主页</a>
-    <a href="#">联系</a>
-  </nav>
-  <section>
-    <h2>关于我</h2>
-    <p>呃呃呃</p>
-  </section>
-  <footer>
-    <p>© 2026 mondlichthari | 使用 GitHub Pages 搭建</p>
-  </footer>
+
+    <!-- 背景光晕 -->
+    <div class="glow-sphere"></div>
+    <div class="glow-sphere v2"></div>
+
+    <!-- 主面板 -->
+    <div class="container">
+        <!-- 头像 (默认用了一张经典的魔理沙占位图，上线前记得换成你自己的本地路径或网络链接) -->
+        <div class="avatar-wrapper">
+            <img class="avatar" src="https://api.paugram.com/wallpaper/" alt="Avatar">
+        </div>
+
+        <!-- 名字与代号 -->
+        <h1>Jarad Marcus</h1>
+        <div class="subtitle">SYSTEM_STATUS: ACTIVE // INFJ</div>
+
+        <!-- 个人简介 -->
+        <p class="bio">
+            「普通的魔法使罢了。」<br>
+            日常在终端与代码之间寻找灵感。这里是部署在 GitHub 上的个人观测终端，记录一些技术折腾与幻想乡的碎片。
+        </p>
+
+        <!-- ACG/技术标签墙 -->
+        <div class="tags">
+            <span class="tag"># C++</span>
+            <span class="tag"># macOS</span>
+            <span class="tag"># 东方Project</span>
+            <span class="tag"># Project SEKAI</span>
+            <span class="tag"># 音游人</span>
+            <span class="tag"># 90s日剧</span>
+        </div>
+
+        <!-- 导航链接 -->
+        <div class="links">
+            <a href="https://github.com/你的用户名" target="_blank" class="link-item">✨ GitHub 💻</a>
+            <a href="#" class="link-item">🎵 My Music Collection 🎧</a>
+            <a href="#" class="link-item">✍️ 个人博客 / 笔记 📑</a>
+        </div>
+
+        <!-- 底部状态栏 -->
+        <div class="footer-status">
+            <span class="pulse-dot"></span> CONNECTION ESTABLISHED // 2026
+        </div>
+    </div>
+
 </body>
 </html>
