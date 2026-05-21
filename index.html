@@ -1,141 +1,212 @@
-:root {
-    --bg-color: #000000;         /* 绝对纯黑 */
-    --card-bg: #000000;          /* 取消磨砂玻璃，回归纯黑 */
-    --accent-color: #ffffff;     /* 主高亮：纯白 */
-    --text-main: #e0e0e0;
-    --text-muted: #666666;       /* 暗灰，降低平时存在感 */
-}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>minako's personal site</title>
+    <style>
+        :root {
+            --bg-color: #000000;         /* 绝对纯黑 */
+            --card-bg: #000000;          /* 取消磨砂玻璃，回归纯黑 */
+            --accent-color: #ffffff;     /* 主高亮：纯白 */
+            --text-main: #e0e0e0;
+            --text-muted: #666666;       /* 暗灰，降低平时存在感 */
+        }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Consolas', 'Courier New', 'PingFang SC', sans-serif; /* 优先等宽字体 */
-}
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Consolas', 'Courier New', 'PingFang SC', sans-serif; /* 优先等宽字体 */
+        }
 
-body {
-    background-color: var(--bg-color);
-    color: var(--text-main);
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-/* 删除了原有的 body::before 网格和光晕动画，保持背景绝对纯净 */
+        /* 主卡片容器 */
+        .container {
+            position: relative;
+            z-index: 10;
+            width: 90%;
+            max-width: 420px;
+            background: var(--card-bg);
+            border: 1px solid #222222; /* 极暗的边框 */
+            border-radius: 0px;        /* 纯黑酷炫风不需要圆角 */
+            padding: 40px 30px;
+            text-align: left;          /* 换成左对齐，更有独立博客的冷静感 */
+        }
 
-.container {
-    position: relative;
-    z-index: 10;
-    width: 90%;
-    max-width: 420px;
-    background: var(--card-bg);
-    border: 1px solid #222222; /* 极暗的边框 */
-    border-radius: 0px;        /* 纯黑酷炫风不需要圆角 */
-    padding: 40px 30px;
-    text-align: left;          /* 换成左对齐，更有独立博客 / 终端的冷静感 */
-}
+        /* 头像区域 */
+        .avatar-wrapper {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            margin: 0 0 25px 0;        /* 左对齐 */
+        }
 
-.avatar-wrapper {
-    width: 80px;
-    height: 80px;
-    margin: 0 0 20px 0;        /* 左对齐 */
-}
+        .avatar {
+            width: 100%;
+            height: 100%;
+            border-radius: 0px;        /* 头像变方 */
+            object-fit: cover;
+            border: 1px solid #333;
+            filter: grayscale(100%);   /* 头像默认黑白，鼠标放上去再变彩色 */
+            transition: filter 0.3s ease;
+        }
 
-.avatar {
-    width: 100%;
-    height: 100%;
-    border-radius: 0px;        /* 头像变方 */
-    object-fit: cover;
-    border: 1px solid #333;
-    filter: grayscale(100%);   /* 头像默认黑白，鼠标放上去再变彩色 */
-    transition: filter 0.3s ease;
-}
+        .container:hover .avatar {
+            filter: grayscale(0%);
+        }
 
-.avatar-wrapper:hover .avatar {
-    filter: grayscale(0%);
-}
+        /* 文本样式 */
+        h1 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+            color: #fff;
+            letter-spacing: -0.5px;
+        }
 
-h1 {
-    font-size: 1.4rem;
-    font-weight: 700;
-    margin-bottom: 4px;
-    color: #fff;
-}
+        .subtitle {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-family: monospace;
+            margin-bottom: 24px;
+        }
 
-.subtitle {
-    font-size: 0.8rem;
-    color: var(--text-muted);
-    font-family: monospace;
-    margin-bottom: 24px;
-}
+        .bio {
+            font-size: 0.9rem;
+            color: #999;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
 
-.bio {
-    font-size: 0.9rem;
-    color: #999;
-    line-height: 1.6;
-    margin-bottom: 25px;
-}
+        /* 标签墙 */
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 35px;
+        }
 
-.tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 30px;
-}
+        .tag {
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            border-radius: 0px;
+            background: transparent;
+            border: 1px solid #222;
+            color: var(--text-muted);
+            transition: all 0.2s ease;
+        }
 
-.tag {
-    font-size: 0.75rem;
-    padding: 2px 8px;
-    border-radius: 0px;
-    background: transparent;
-    border: 1px solid #222;
-    color: var(--text-muted);
-}
+        .tag:hover {
+            border-color: #444;
+            color: #fff;
+        }
 
-.tag:hover {
-    border-color: #444;
-    color: #fff;
-}
+        /* 链接列表 */
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
 
-.links {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
+        .link-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* 左右两端对齐 */
+            padding: 12px;
+            border-radius: 0px;
+            background: transparent;
+            border: 1px solid #111;
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
 
-.link-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* 左右两端对齐，更像极简菜单 */
-    padding: 12px;
-    border-radius: 0px;
-    background: transparent;
-    border: 1px solid #111;
-    color: var(--text-main);
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: all 0.2s ease;
-}
+        .link-item:hover {
+            border-color: #fff;        /* 悬停时只有纯白边框亮起 */
+            background: #111;
+        }
 
-.link-item:hover {
-    border-color: #fff;        /* 悬停时只有纯白边框亮起 */
-    background: #111;
-}
+        /* 底部状态 */
+        .footer-status {
+            margin-top: 40px;
+            font-size: 0.7rem;
+            color: #444;
+            font-family: monospace;
+        }
+        
+        .pulse-dot {
+            display: inline-block;
+            width: 4px;
+            height: 4px;
+            background: #555;
+            border-radius: 50%;
+            margin-right: 4px;
+        }
+    </style>
+</head>
+<body>
 
-.footer-status {
-    margin-top: 40px;
-    font-size: 0.7rem;
-    color: #444;
-    font-family: monospace;
-}
+    <!-- 主面板 -->
+    <div class="container">
+        
+        <div class="avatar-wrapper">
+            <img class="avatar" src="https://github.com/mondlichthari.png" alt="Avatar">
+        </div>
 
-/* 绿点变成暗红或暗灰闪烁 */
-.pulse-dot {
-    display: inline-block;
-    width: 4px;
-    height: 4px;
-    background: #ff3333;
-    border-radius: 50%;
-    margin-right: 4px;
-}
+        <!-- 名字与代号 -->
+        <h1>みなこ</h1>
+        <div class="subtitle">// INFJ Terminal</div>
+
+        <!-- 个人简介 -->
+        <p class="bio">
+            「普通的魔法使罢了。」<br>
+            日常在终端与代码之间寻找灵感。这里是部署在 GitHub 上的个人观测终端，记录一些碎片。
+        </p>
+
+        <!-- ACG/技术标签墙 -->
+        <div class="tags">
+            <span class="tag">C++</span>
+            <span class="tag">macOS</span>
+            <span class="tag">Linux</span>
+            <span class="tag">東方Project</span>
+            <span class="tag">俺妹</span>
+            <span class="tag">Project SEKAI</span>
+            <span class="tag">音游</span>
+            <span class="tag">ボカロ</span>
+        </div>
+
+        <!-- 导航链接 -->
+        <div class="links">
+            <a href="https://github.com/mondlichthari" target="_blank" class="link-item">
+                <span>GitHub</span><span>[💻]</span>
+            </a>
+            <a href="https://music.163.com/#/playlist?id=5479860109" target="_blank" class="link-item">
+                <span>NetEase Music</span><span>[🎵]</span>
+            </a>
+            <a href="https://open.spotify.com/user/31j4fxlyif4rpz4fech3hschm5le" target="_blank" class="link-item">
+                <span>Spotify</span><span>[🎧]</span>
+            </a>
+            <a href="https://space.bilibili.com/1982995046?spm_id_from=333.1007.0.0" target="_blank" class="link-item">
+                <span>Bilibili</span><span>[📺]</span>
+            </a>
+        </div>
+
+        <!-- 底部状态栏 -->
+        <div class="footer-status">
+            <span class="pulse-dot"></span> minako.2026 // all rights reserved.
+        </div>
+    </div>
+
+</body>
+</html>
