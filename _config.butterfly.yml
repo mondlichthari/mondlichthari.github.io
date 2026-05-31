@@ -1,0 +1,260 @@
+# Butterfly Theme Configuration
+
+nav:
+  display_title: true
+  display_post_title: true
+  fixed: false
+
+menu:
+  首页: / || fas fa-home
+  归档: /archives/ || fas fa-archive
+  标签: /tags/ || fas fa-tags
+
+code_blocks:
+  theme: pale night
+  macStyle: true
+  height_limit: false
+  word_wrap: false
+  copy: true
+  language: true
+  shrink: false
+  fullpage: false
+
+social:
+  fab fa-github: https://github.com/mondlichthari || Github || '#24292e'
+  fab fa-bilibili: https://space.bilibili.com/1982995046 || Bilibili || '#00a1d6'
+
+favicon: /img/avatar.png
+
+avatar:
+  img: https://github.com/mondlichthari.png
+  effect: true
+
+disable_top_img: false
+
+background:
+
+cover:
+  index_enable: true
+  aside_enable: true
+  archives_enable: true
+  default_cover:
+
+error_img:
+  flink: /img/friend_404.gif
+  post_page: /img/404.jpg
+
+post_meta:
+  page:
+    date_type: created
+    date_format: date
+    categories: true
+    tags: false
+    label: true
+  post:
+    position: left
+    date_type: both
+    date_format: date
+    categories: true
+    tags: true
+    label: true
+
+index_site_info_top:
+index_top_img_height:
+
+subtitle:
+  enable: false
+  effect: true
+  typed_option:
+  source: false
+  sub:
+
+index_layout: 3
+
+index_post_content:
+  method: 3
+  length: 500
+
+toc:
+  post: true
+  page: false
+  number: true
+  expand: false
+  style_simple: false
+  scroll_percent: true
+
+post_copyright:
+  enable: true
+  decode: false
+  author_href:
+  license: CC BY-NC-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+reward:
+  enable: false
+  text:
+
+post_edit:
+  enable: false
+  url:
+
+related_post:
+  enable: true
+  limit: 6
+  date_type: created
+
+post_pagination: 1
+
+notice_outdate:
+  enable: false
+  style: flat
+  limit: 180
+  message_prev: 距离上次更新已经过了
+  message_next: 天，文中部分内容可能会过时。
+
+footer:
+  owner:
+    enable: true
+    since: 2026
+  custom_text:
+  copyright: true
+
+custom_file:
+  header: ''
+  footer: ''
+  sidebar: ''
+  post: ''
+  page: ''
+  pagination: ''
+
+aside:
+  enable: true
+  hide: false
+  button: true
+  mobile: true
+  display:
+    archive: true
+    tag: true
+    category: true
+  card_author:
+    enable: true
+    description: '普通的魔法使罢了。'
+    button:
+      enable: true
+      icon: fab fa-github
+      text: Follow Me
+      link: https://github.com/mondlichthari
+  card_announcement:
+    enable: false
+  card_recent_post:
+    enable: true
+    limit: 5
+    sort: date
+  card_categories:
+    enable: false
+  card_tags:
+    enable: true
+    limit: 40
+    color: false
+    orderby: random
+    order: 1
+  card_archives:
+    enable: true
+    type: monthly
+    format: MMMM YYYY
+    order: -1
+  card_post_series:
+    enable: true
+    series_title: false
+  card_newest_comments:
+    enable: false
+  card_webinfo:
+    enable: true
+    post_count: true
+    last_push_date: true
+    runtime_enable: true
+    runtime: '2026-01-01'
+    style: flat
+
+busuanzi:
+  site_uv: false
+  site_pv: false
+  page_pv: false
+
+translate:
+  enable: false
+
+toc_style_simple: false
+
+comment:
+  use:
+
+search:
+  enable: true
+  type: local
+
+share:
+  enable: false
+
+footer_style: 1
+
+highlight_theme: pale night
+highlight_shrink: false
+
+beautify:
+  enable: true
+  field: site
+  title-prefix-icon: ''
+  title-prefix-icon-color: '#F47466'
+
+font:
+  global_font_size: '14px'
+  code_font_size: '13px'
+  font_family: 'Consolas, "Courier New", monospace'
+  code_font_family: 'Consolas, "Courier New", monospace'
+
+blog_title_font:
+  font_link:
+  font_family: 'Consolas, "Courier New", monospace'
+
+hr_icon:
+  enable: true
+  icon: '\f100'
+  icon_top: 0
+
+typed:
+  enable: false
+
+snackbar:
+  enable: false
+
+activate_power_mode:
+  enable: false
+
+lightbox: false
+
+canvas_ribbon:
+  enable: false
+  size: 150
+  alpha: 0.6
+  zIndex: -1
+  click_to_change: false
+  mobile: false
+
+mouse_click:
+  anime:
+    enable: false
+
+pjax:
+  enable: false
+
+preloader: false
+
+aplayerInject:
+  enable: false
+
+display_mode: dark
+
+categoryBar:
+  enable: false
+

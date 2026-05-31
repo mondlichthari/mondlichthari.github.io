@@ -1,0 +1,88 @@
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+
+# Site
+title: minako // terminal
+subtitle: 'INFJ Terminal'
+description: 'minako (みなこ) 的个人观测终端 — C++ / macOS / Linux / ACG'
+keywords:
+author: minako
+language: zh-CN
+timezone: 'Asia/Shanghai'
+
+# URL
+url: https://mondlichthari.github.io
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+pretty_urls:
+  trailing_index: true
+  trailing_html: true
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+# Writing
+new_post_name: :title.md
+default_layout: post
+titlecase: false
+external_link:
+  enable: true
+  field: site
+  exclude: ''
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+syntax_highlighter: highlight.js
+highlight:
+  line_number: true
+  auto_detect: false
+  tab_replace: ''
+  wrap: true
+  hljs: false
+prismjs:
+  preprocess: true
+  line_number: true
+  tab_replace: ''
+
+# Pagination
+index_generator:
+  path: ''
+  per_page: 10
+  order_by: -date
+
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+meta_generator: true
+
+# Date / Time format
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+updated_option: 'mtime'
+
+per_page: 10
+pagination_dir: page
+
+include:
+exclude:
+ignore:
+
+# Theme
+theme: butterfly
+
+# Deployment
+deploy:
+  type: git
+  repo: git@github.com:mondlichthari/mondlichthari.github.io.git
+  branch: gh-pages
