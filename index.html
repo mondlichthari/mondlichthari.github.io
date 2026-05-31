@@ -4,6 +4,12 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="minako (みなこ) 的个人观测终端 — C++ / macOS / Linux / ACG">
+    <meta property="og:title" content="minako's personal site">
+    <meta property="og:description" content="「普通的魔法使罢了。」GitHub 上的个人观测终端。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mondlichthari.github.io">
+    <meta property="og:image" content="https://github.com/mondlichthari.png">
     <title>minako's personal site</title>
     <style>
         :root {
@@ -28,6 +34,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            overflow-y: auto;            /* 内容溢出时可滚动 */
         }
 
         /* 主卡片容器 */
@@ -137,6 +144,16 @@
             background: #111;
         }
 
+        .link-arrow {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            transition: color 0.2s ease;
+        }
+
+        .link-item:hover .link-arrow {
+            color: #fff;
+        }
+
         /* 底部状态 */
         .footer-status {
             margin-top: 40px;
@@ -144,7 +161,12 @@
             color: #444;
             font-family: monospace;
         }
-        
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.3; }
+            50%      { opacity: 1; }
+        }
+
         .pulse-dot {
             display: inline-block;
             width: 4px;
@@ -152,6 +174,7 @@
             background: #555;
             border-radius: 50%;
             margin-right: 4px;
+            animation: pulse 2s ease-in-out infinite;
         }
     </style>
 </head>
@@ -159,7 +182,7 @@
 
     <!-- 主面板 -->
     <div class="container">
-        
+
         <div class="avatar-wrapper">
             <img class="avatar" src="https://github.com/mondlichthari.png" alt="Avatar">
         </div>
@@ -190,15 +213,19 @@
         <div class="links">
             <a href="https://github.com/mondlichthari" target="_blank" class="link-item">
                 <span>GitHub</span>
+                <span class="link-arrow">↗</span>
             </a>
             <a href="https://music.163.com/#/playlist?id=5479860109" target="_blank" class="link-item">
                 <span>NetEase Music</span>
+                <span class="link-arrow">↗</span>
             </a>
             <a href="https://open.spotify.com/user/31j4fxlyif4rpz4fech3hschm5le" target="_blank" class="link-item">
                 <span>Spotify</span>
+                <span class="link-arrow">↗</span>
             </a>
             <a href="https://space.bilibili.com/1982995046?spm_id_from=333.1007.0.0" target="_blank" class="link-item">
                 <span>Bilibili</span>
+                <span class="link-arrow">↗</span>
             </a>
         </div>
 
