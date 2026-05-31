@@ -1,0 +1,356 @@
+/* ===== 基础变量 ===== */
+:root {
+    --bg-color: #000000;
+    --card-bg: #000000;
+    --text-main: #e0e0e0;
+    --text-muted: #666666;
+    --border-dim: #222222;
+    --border-dark: #111111;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Consolas', 'Courier New', 'PingFang SC', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 0;
+    overflow-y: auto;
+}
+
+/* ===== 容器 ===== */
+.container {
+    position: relative;
+    z-index: 10;
+    width: 90%;
+    max-width: 420px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-dim);
+    border-radius: 0px;
+    padding: 40px 30px;
+    text-align: left;
+}
+
+.container-wide {
+    max-width: 640px;
+}
+
+/* ===== 顶部导航 ===== */
+.top-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-dark);
+    font-size: 0.85rem;
+}
+
+.nav-link {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+    padding: 2px 6px;
+}
+
+.nav-link:hover {
+    color: #fff;
+}
+
+.nav-link.active {
+    color: #fff;
+}
+
+.nav-sep {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+}
+
+.nav-current {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+}
+
+/* ===== 头像 ===== */
+.avatar-wrapper {
+    width: 80px;
+    height: 80px;
+    margin: 0 0 25px 0;
+}
+
+.avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
+    object-fit: cover;
+    border: 1px solid #333;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.container:hover .avatar {
+    filter: grayscale(0%);
+}
+
+/* ===== 文本 ===== */
+h1 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: #fff;
+    letter-spacing: -0.5px;
+}
+
+.subtitle {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-family: monospace;
+    margin-bottom: 24px;
+}
+
+.bio {
+    font-size: 0.9rem;
+    color: #999;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* ===== 标签墙 ===== */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 35px;
+}
+
+.tag {
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    background: transparent;
+    border: 1px solid var(--border-dim);
+    color: var(--text-muted);
+    transition: all 0.2s ease;
+}
+
+.tag:hover {
+    border-color: #444;
+    color: #fff;
+}
+
+/* ===== 链接列表 ===== */
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.link-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    border: 1px solid var(--border-dark);
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.link-item:hover {
+    border-color: #fff;
+    background: #111;
+}
+
+.link-arrow {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    transition: color 0.2s ease;
+}
+
+.link-item:hover .link-arrow {
+    color: #fff;
+}
+
+/* ===== 博客列表 ===== */
+.blog-header {
+    margin-bottom: 30px;
+}
+
+.post-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.post-item {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding: 14px 12px;
+    border: 1px solid var(--border-dark);
+    color: var(--text-main);
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.post-item:hover {
+    border-color: #fff;
+    background: #111;
+}
+
+.post-date {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+    font-family: monospace;
+}
+
+.post-title {
+    font-size: 0.9rem;
+    color: #fff;
+    flex: 1;
+}
+
+.post-excerpt {
+    display: none;
+}
+
+.post-item .link-arrow {
+    font-size: 0.8rem;
+}
+
+/* ===== 博客正文 ===== */
+.post-content {
+    margin-top: 10px;
+}
+
+.post-meta {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+    font-size: 0.75rem;
+}
+
+.post-meta .post-date {
+    color: var(--text-muted);
+}
+
+.post-tag {
+    color: #444;
+    border: 1px solid #222;
+    padding: 1px 6px;
+    font-size: 0.7rem;
+}
+
+.post-content h2 {
+    font-size: 1.2rem;
+    color: #fff;
+    margin: 20px 0 16px;
+    letter-spacing: -0.3px;
+}
+
+.post-content h3 {
+    font-size: 1rem;
+    color: #ccc;
+    margin: 24px 0 10px;
+}
+
+.post-content p {
+    font-size: 0.85rem;
+    color: #999;
+    line-height: 1.8;
+    margin-bottom: 14px;
+}
+
+.post-content a {
+    color: #fff;
+    text-decoration: underline;
+    text-decoration-color: #333;
+    text-underline-offset: 3px;
+    transition: text-decoration-color 0.2s;
+}
+
+.post-content a:hover {
+    text-decoration-color: #fff;
+}
+
+.post-content code {
+    background: #111;
+    border: 1px solid #222;
+    padding: 1px 5px;
+    font-size: 0.8rem;
+    color: #ccc;
+    border-radius: 0px;
+}
+
+.cursor {
+    animation: blink 1s step-end infinite;
+    color: #fff;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50%      { opacity: 0; }
+}
+
+.post-divider {
+    height: 1px;
+    background: var(--border-dark);
+    margin: 40px 0 20px;
+}
+
+.post-footer {
+    margin-top: 10px;
+}
+
+.back-link {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.back-link:hover {
+    color: #fff;
+}
+
+/* ===== 底部 ===== */
+.footer-status {
+    margin-top: 40px;
+    font-size: 0.7rem;
+    color: #444;
+    font-family: monospace;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.3; }
+    50%      { opacity: 1; }
+}
+
+.pulse-dot {
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    background: #555;
+    border-radius: 50%;
+    margin-right: 4px;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* ===== 响应式 ===== */
+@media (max-width: 480px) {
+    .container {
+        padding: 30px 20px;
+    }
+    .container-wide {
+        padding: 30px 20px;
+    }
+}
