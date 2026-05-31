@@ -28,7 +28,7 @@ favicon: /img/avatar.png
 
 avatar:
   img: https://github.com/mondlichthari.png
-  effect: true
+  effect: false
 
 disable_top_img: false
 
