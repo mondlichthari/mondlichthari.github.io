@@ -258,3 +258,7 @@ display_mode: dark
 categoryBar:
   enable: false
 
+
+inject:
+  head:
+    - <link rel="stylesheet" href="/css/custom.css">

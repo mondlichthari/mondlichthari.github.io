@@ -1,0 +1,10 @@
+/* 强制关闭头像旋转 */
+.avatar-img {
+  animation: none !important;
+  transform: none !important;
+}
+
+.avatar-img:hover {
+  animation: none !important;
+  transform: none !important;
+}
