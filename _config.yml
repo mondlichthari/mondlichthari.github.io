@@ -2,8 +2,8 @@
 ## Docs: https://hexo.io/docs/configuration.html
 
 # Site
-title: minako // terminal
-subtitle: 'INFJ Terminal'
+title: minako
+subtitle: ''
 description: 'minako (みなこ) 的个人观测终端 — C++ / macOS / Linux / ACG'
 keywords:
 author: minako

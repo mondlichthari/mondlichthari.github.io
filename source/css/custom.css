@@ -8,3 +8,23 @@
   animation: none !important;
   transform: none !important;
 }
+
+/* 缩小首页 banner 高度 */
+#page-header {
+  min-height: 300px !important;
+  height: 300px !important;
+}
+
+#site-info {
+  margin-top: 100px !important;
+}
+
+#page-header.not-top-img {
+  min-height: 300px !important;
+  height: 300px !important;
+}
+
+/* 去掉副标题显示 */
+#site-subtitle {
+  display: none !important;
+}

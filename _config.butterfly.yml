@@ -60,7 +60,7 @@ post_meta:
     label: true
 
 index_site_info_top:
-index_top_img_height:
+index_top_img_height: 300px
 
 subtitle:
   enable: false
