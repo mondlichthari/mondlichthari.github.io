@@ -62,11 +62,13 @@ post_meta:
 index_site_info_top:
 index_top_img_height: 300px
 
+# The banner image of index page
+index_img: /img/banner.jpg
+
 subtitle:
   enable: false
   effect: true
   typed_option:
-  source: false
   sub:
 
 index_layout: 3
