@@ -1,13 +1,55 @@
-/* Keep the home title visually centered after index_site_info_top sets top: 50%. */
-#page-header #site-info {
-  transform: translateY(-50%);
+/* 强制关闭头像旋转 */
+.avatar-img {
+  animation: none !important;
+  transform: none !important;
 }
 
-/* Footer background polish; image and mask are configured in Butterfly. */
+.avatar-img:hover {
+  animation: none !important;
+  transform: none !important;
+}
+
+/* 缩小首页 banner 高度 — 覆盖 full_page */
+#page-header.full_page {
+  min-height: 300px !important;
+  height: 300px !important;
+}
+
+#page-header {
+  min-height: 300px !important;
+  height: 300px !important;
+}
+
+/* 配合 index_site_info_top: 50% 实现标题垂直居中 */
+#page-header #site-info {
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+}
+
+/* 去掉副标题显示 */
+#site-subtitle {
+  display: none !important;
+}
+
+/* footer 背景图 + 半透明遮罩 */
 #footer {
-  background-position: center center;
+  background-image: url(/img/footer-mosaic.jpg) !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  position: relative;
 }
 
 #footer::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
   background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+#footer > * {
+  position: relative;
+  z-index: 1;
 }
