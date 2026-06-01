@@ -24,7 +24,7 @@ social:
   fab fa-github: https://github.com/mondlichthari || Github || '#24292e'
   fab fa-bilibili: https://space.bilibili.com/1982995046 || Bilibili || '#00a1d6'
 
-favicon: /img/avatar.png
+favicon: /img/favicon.ico
 
 avatar:
   img: https://github.com/mondlichthari.png
@@ -59,7 +59,7 @@ post_meta:
     tags: true
     label: true
 
-index_site_info_top:
+index_site_info_top: 50%
 index_top_img_height: 300px
 
 # The banner image of index page
@@ -192,13 +192,24 @@ toc_style_simple: false
 
 comments:
   use: Giscus
+  text: true
+  lazyload: true
+  count: false
+  card_post_count: false
 
 search:
-  enable: true
-  type: local
+  use: local_search
+  placeholder: 搜索文章
+  local_search:
+    preload: false
+    top_n_per_article: 1
+    unescape: false
+    pagination:
+      enable: false
+      hitsPerPage: 8
 
 share:
-  enable: false
+  use:
 
 footer_style: 1
 
@@ -208,13 +219,13 @@ highlight_shrink: false
 beautify:
   enable: true
   field: site
-  title-prefix-icon: ''
-  title-prefix-icon-color: '#F47466'
+  title_prefix_icon: ''
+  title_prefix_icon_color: '#F47466'
 
 font:
   global_font_size: '14px'
   code_font_size: '13px'
-  font_family: 'Consolas, "Courier New", monospace'
+  font_family: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", "Microsoft YaHei", sans-serif'
   code_font_family: 'Consolas, "Courier New", monospace'
 
 blog_title_font:
@@ -275,5 +286,5 @@ giscus:
   light_theme: light
   dark_theme: dark
   option:
-    lang: zh-CN
-    loading: lazy
+    data-lang: zh-CN
+    data-loading: lazy

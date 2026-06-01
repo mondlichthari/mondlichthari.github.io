@@ -53,6 +53,13 @@ prismjs:
   line_number: true
   tab_replace: ''
 
+# Local search index used by Butterfly's local_search integration.
+search:
+  path: search.xml
+  field: post
+  content: true
+  format: html
+
 # Pagination
 index_generator:
   path: ''
