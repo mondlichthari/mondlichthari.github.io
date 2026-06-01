@@ -93,3 +93,4 @@ deploy:
   type: git
   repo: git@github.com:mondlichthari/mondlichthari.github.io.git
   branch: gh-pages
+# site search
