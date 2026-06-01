@@ -181,9 +181,9 @@ aside:
     style: flat
 
 busuanzi:
-  site_uv: false
-  site_pv: false
-  page_pv: false
+  site_uv: true
+  site_pv: true
+  page_pv: true
 
 translate:
   enable: false
