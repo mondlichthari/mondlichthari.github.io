@@ -190,8 +190,8 @@ translate:
 
 toc_style_simple: false
 
-comment:
-  use:
+comments:
+  use: Giscus
 
 search:
   enable: true
@@ -266,3 +266,14 @@ categoryBar:
 inject:
   head:
     - <link rel="stylesheet" href="/css/custom.css">
+
+# Giscus Comment System
+giscus:
+  repo: mondlichthari/mondlichthari.github.io
+  repo_id: R_kgDOSf02Cw
+  category_id: DIC_kwDOSf02C84C-Qd7
+  light_theme: light
+  dark_theme: dark
+  option:
+    lang: zh-CN
+    loading: lazy
