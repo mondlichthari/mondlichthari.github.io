@@ -9,19 +9,21 @@
   transform: none !important;
 }
 
-/* 缩小首页 banner 高度 */
+/* 缩小首页 banner 高度 — 覆盖 full_page */
+#page-header.full_page {
+  min-height: 300px !important;
+  height: 300px !important;
+}
+
 #page-header {
   min-height: 300px !important;
   height: 300px !important;
 }
 
-#site-info {
-  margin-top: 100px !important;
-}
-
-#page-header.not-top-img {
-  min-height: 300px !important;
-  height: 300px !important;
+#page-header #site-info {
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
 }
 
 /* 去掉副标题显示 */
@@ -42,7 +44,7 @@
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0, 0, 0, 0.65);
+  background: rgba(0, 0, 0, 0.5);
   z-index: 0;
 }
 
