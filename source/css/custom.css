@@ -32,12 +32,8 @@
   display: none !important;
 }
 
-/* footer 背景图 + 半透明遮罩 */
+/* footer 半透明遮罩（背景图由 theme footer_img 注入） */
 #footer {
-  background-image: url(/img/footer-mosaic.jpg) !important;
-  background-size: cover !important;
-  background-position: center center !important;
-  background-repeat: no-repeat !important;
   position: relative;
 }
 
