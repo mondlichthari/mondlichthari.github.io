@@ -63,7 +63,7 @@ index_site_info_top: 50%
 index_top_img_height: 300px
 
 # The banner image of index page
-index_img: /img/banner.jpg
+index_img: /img/banner.webp
 
 subtitle:
   enable: false
@@ -114,7 +114,7 @@ notice_outdate:
   message_prev: 距离上次更新已经过了
   message_next: 天，文中部分内容可能会过时。
 
-footer_img: /img/footer-mosaic.jpg
+footer_img: /img/footer-mosaic.webp
 
 footer:
   owner:
@@ -277,6 +277,7 @@ categoryBar:
 inject:
   head:
     - <link rel="stylesheet" href="/css/custom.css">
+    - <link rel="preload" as="image" href="/img/banner.webp" type="image/webp">
 
 # Giscus Comment System
 giscus:
