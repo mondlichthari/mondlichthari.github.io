@@ -24,7 +24,7 @@ social:
   fab fa-github: https://github.com/mondlichthari || Github || '#24292e'
   fab fa-bilibili: https://space.bilibili.com/1982995046 || Bilibili || '#00a1d6'
 
-favicon: /img/favicon.ico
+favicon: /favicon.ico
 
 avatar:
   img: https://github.com/mondlichthari.png
