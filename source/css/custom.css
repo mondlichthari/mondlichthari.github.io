@@ -36,8 +36,7 @@
 #footer {
   position: relative;
   background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #footer::before {
