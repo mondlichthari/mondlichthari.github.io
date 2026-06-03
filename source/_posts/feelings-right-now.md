@@ -1,5 +1,5 @@
 ---
-titles: bad vibes these days,but feeling the pain is also a part of life
+title: bad vibes these days,but feeling the pain is also a part of life
 date: 2026-6-3 23:12:00
 tags:
   - feels
