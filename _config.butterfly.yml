@@ -274,6 +274,10 @@ display_mode: dark
 categoryBar:
   enable: false
 
+CDN:
+  internal_provider: local
+  third_party_provider: cdnjs
+  version: true
 
 inject:
   head:
