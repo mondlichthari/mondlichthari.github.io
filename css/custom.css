@@ -35,7 +35,7 @@
 /* footer 半透明遮罩（背景图由 theme footer_img 注入） */
 #footer {
   position: relative;
-  background-position: top;
+  background-position: center;
   background-size: cover;
 }
 

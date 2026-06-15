@@ -4931,7 +4931,7 @@ figure.highlight pre .javascript .function {
 }
 .layout .pagination > * {
   display: inline-block;
-  margin: 0 6px;
+  margin: 6px;
   width: 2.5em;
   height: 2.5em;
   line-height: 2.5em;
