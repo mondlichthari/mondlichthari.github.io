@@ -277,6 +277,8 @@ categoryBar:
 CDN:
   internal_provider: local
   third_party_provider: cdnjs
+  option:
+    fontawesome: 'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css'
   version: true
 
 inject:
