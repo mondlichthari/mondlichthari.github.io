@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300" width="200" height="300">
+  <!-- 头发 -->
+  <ellipse cx="100" cy="70" rx="45" ry="50" fill="#1a1a1a"/>
+  <!-- 脸 -->
+  <ellipse cx="100" cy="85" rx="32" ry="36" fill="#ffe0d0"/>
+  <!-- 刘海 -->
+  <path d="M68 70 Q100 40 132 70 Q120 55 100 58 Q80 55 68 70" fill="#1a1a1a"/>
+  <!-- 红蝴蝶结 -->
+  <path d="M70 45 L45 30 L55 55 Z" fill="#e60000"/>
+  <path d="M70 45 L95 30 L85 55 Z" fill="#e60000"/>
+  <circle cx="70" cy="45" r="7" fill="#cc0000"/>
+  <!-- 眼睛 -->
+  <ellipse cx="88" cy="88" rx="4" ry="6" fill="#333"/>
+  <ellipse cx="112" cy="88" rx="4" ry="6" fill="#333"/>
+  <!-- 嘴 -->
+  <path d="M95 100 Q100 105 105 100" stroke="#aa5555" stroke-width="2" fill="none"/>
+  <!-- 衣服 -->
+  <path d="M60 120 Q100 105 140 120 L150 240 L50 240 Z" fill="#fff"/>
+  <path d="M60 120 Q100 105 140 120 L145 150 L55 150 Z" fill="#e60000"/>
+  <!-- 袖子 -->
+  <path d="M60 130 L25 190 L45 195 L70 150 Z" fill="#fff" stroke="#e60000" stroke-width="2"/>
+  <path d="M140 130 L175 190 L155 195 L130 150 Z" fill="#fff" stroke="#e60000" stroke-width="2"/>
+  <!-- 御币 -->
+  <line x1="160" y1="180" x2="185" y2="120" stroke="#8b5a2b" stroke-width="4"/>
+  <rect x="178" y="105" width="20" height="20" fill="#fff" stroke="#888"/>
+  <line x1="180" y1="105" x2="180" y2="90" stroke="#fff" stroke-width="4"/>
+  <line x1="188" y1="105" x2="188" y2="85" stroke="#fff" stroke-width="4"/>
+  <line x1="196" y1="105" x2="196" y2="90" stroke="#fff" stroke-width="4"/>
+  <!-- 阴阳玉 -->
+  <circle cx="40" cy="220" r="12" fill="#fff" stroke="#000" stroke-width="2"/>
+  <path d="M40 208 A12 12 0 0 1 40 232 A6 6 0 0 1 40 220 A6 6 0 0 0 40 208" fill="#000"/>
+</svg>
