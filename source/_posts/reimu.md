@@ -1,6 +1,6 @@
 ---
 title: Reimu
- date: 2026-09-18 00:00:00
+date: 2026-09-18 00:00:00
 updated: 2026-09-18 00:00:00
 tags:
   - 东方Project
