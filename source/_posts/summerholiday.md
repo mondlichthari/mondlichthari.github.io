@@ -1,6 +1,7 @@
 ---
 title: 
 date: 2026-07-03 13:21:33
+published: false
 tags:
   - void
 categories:
