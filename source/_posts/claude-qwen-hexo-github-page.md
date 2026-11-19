@@ -1,5 +1,5 @@
 ---
-title: hexo搭建的GitHub page（Claude code辅助流程）
+title: 用 Claude Code 和 Qwen 搭 Hexo 博客的心得
 date: 2026-05-31 21:00:00
 tags:
   - hexo

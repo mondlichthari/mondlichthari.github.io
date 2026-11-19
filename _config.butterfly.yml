@@ -67,10 +67,11 @@ index_top_img_height: 300px
 index_img: /img/banner.webp
 
 subtitle:
-  enable: false
-  effect: true
+  enable: true
+  effect: false
   typed_option:
   sub:
+    - '记录 macOS 工具、折腾博客和一些随笔'
 
 index_layout: 3
 
