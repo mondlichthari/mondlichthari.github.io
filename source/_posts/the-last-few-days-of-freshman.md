@@ -1,7 +1,7 @@
 ---
 title: 快要放假了
 date: 2026-6-17 22:17:02
-published: false
+published: true
 tags:
   - mood
   - self
