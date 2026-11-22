@@ -1,0 +1,22 @@
+<%
+const heading = page.tag || page.category || (page.month ? page.year + ' 年 ' + page.month + ' 月' : page.year ? page.year + ' 年' : '文章归档');
+const groups = new Map();
+page.posts.each(post => {
+  const month = date(post.date, 'YYYY-MM');
+  if (!groups.has(month)) groups.set(month, []);
+  groups.get(month).push(post);
+});
+%>
+<section class="inner">
+  <p class="crumb"><a href="<%= url_for('/') %>">首页</a> / <%= page.tag ? '标签' : page.category ? '分类' : '归档' %></p>
+  <h1 class="display"><%= heading %></h1>
+  <% if (is_archive() && !page.month) { %>
+    <% for (const [month, posts] of groups) { %>
+      <h2 class="month"><a href="<%= url_for(config.archive_dir + '/' + month.replace('-', '/') + '/') %>"><%= date(posts[0].date, 'YYYY 年 M 月') %></a></h2>
+      <%- partial('parts/entries', {posts}) %>
+    <% } %>
+  <% } else { %>
+    <%- partial('parts/entries', {posts:page.posts.toArray()}) %>
+  <% } %>
+  <%- partial('parts/pager') %>
+</section>

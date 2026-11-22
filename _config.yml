@@ -86,7 +86,7 @@ exclude:
 ignore:
 
 # Theme
-theme: butterfly
+theme: kanran
 
 # Deployment
 deploy:

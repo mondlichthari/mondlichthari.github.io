@@ -1,0 +1,11 @@
+banner: /img/banner.webp
+panorama: /img/footer-mosaic.webp
+icon: /favicon.ico
+introduction: 记录 macOS 工具、折腾博客和一些随笔
+social:
+  GitHub: https://github.com/mondlichthari
+  Bilibili: https://space.bilibili.com/1982995046
+giscus:
+  repo: mondlichthari/mondlichthari.github.io
+  repo_id: R_kgDOSf02Cw
+  category_id: DIC_kwDOSf02C84C-Qd7

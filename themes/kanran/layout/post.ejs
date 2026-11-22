@@ -1,0 +1,14 @@
+<article class="reader">
+<div class="reader-head"><p class="crumb"><a href="<%= url_for('/') %>">首页</a> / <a href="<%= url_for(config.archive_dir + '/') %>">文章归档</a></p>
+<div class="meta"><time datetime="<%= date_xml(page.date) %>"><%= date(page.date,'YYYY.MM.DD') %></time><% page.categories.each(cat => { %><a href="<%= url_for(cat.path) %>"><%= cat.name %></a><% }) %></div>
+<h1><%= page.title %></h1><div class="byline"><img src="<%= url_for(theme.icon) %>" alt="" width="30" height="30"><%= page.author || config.author %></div></div>
+<div class="reader-grid"><div class="reading">
+<div class="prose"><%- page.content %></div>
+<div class="chips post-tags"><% page.tags.each(tag => { %><a href="<%= url_for(tag.path) %>"><%= tag.name %></a><% }) %></div>
+<p class="license">本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。</p>
+<nav class="adjacent" aria-label="相邻文章"><% [[page.prev,'较新一篇'],[page.next,'较早一篇']].forEach(([post,label]) => { if(post) { %><a href="<%= url_for(post.path) %>"><small><%= label %></small><%= post.title %></a><% } }) %></nav>
+<% if (page.comments !== false && theme.giscus.repo) { %>
+<section class="comments"><h2>评论</h2>
+<div id="discussion" data-repo="<%= theme.giscus.repo %>" data-repo-id="<%= theme.giscus.repo_id %>" data-category-id="<%= theme.giscus.category_id %>" data-mapping="pathname" data-reactions-enabled="1" data-lang="zh-CN" data-loading="lazy"></div>
+</section><% } %></div>
+<% const contents = toc(page.content, {list_number:false}); if (contents) { %><aside class="contents"><h2>文章目录</h2><%- contents %></aside><% } %></div></article>

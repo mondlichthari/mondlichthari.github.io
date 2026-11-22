@@ -1,0 +1,7 @@
+<div class="entries"><% posts.forEach(post => {
+  const lead = post.description || post.excerpt || (post.content.match(/<p\b[^>]*>([\s\S]*?)<\/p>/i) || [])[1] || post.content;
+%>
+<article class="entry"><div class="meta"><time datetime="<%= date_xml(post.date) %>"><%= date(post.date,'YYYY.MM.DD') %></time>
+<% post.categories.each(cat => { %><a href="<%= url_for(cat.path) %>"><%= cat.name %></a><% }) %></div>
+<h3><a href="<%= url_for(post.path) %>"><%= post.title %></a></h3>
+<p><%= truncate(strip_html(lead).trim(), {length: 90}) %></p></article><% }) %></div>

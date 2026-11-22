@@ -1,0 +1,16 @@
+<% if (page.current === 1) { %>
+<section class="mast">
+  <div class="mast-text"><p class="kana" lang="ja">みなこ</p><h1><%= config.title %></h1>
+  <p class="intro"><%= theme.introduction %></p></div>
+  <img class="mast-img" src="<%= url_for(theme.banner) %>" alt="由多个黑白漫画人物组成的博客横幅" width="1600" height="903" fetchpriority="high">
+</section>
+<% } %>
+<div class="home-grid">
+<section aria-labelledby="latest"><div class="section-head"><h2 id="latest">最新文章</h2><a href="<%= url_for(config.archive_dir + '/') %>">全部归档</a></div>
+<%- partial('parts/entries', {posts:page.posts.toArray()}) %>
+<%- partial('parts/pager') %>
+</section>
+<aside class="topics"><h2>按分类阅读</h2>
+<% site.categories.sort('name').each(cat => { if (cat.length) { %><a class="topic" href="<%= url_for(cat.path) %>"><span><%= cat.name %></span><small><%= cat.length %> 篇</small></a><% } }) %>
+<h2>标签</h2><div class="chips"><% site.tags.sort('name').each(tag => { if (tag.length) { %><a href="<%= url_for(tag.path) %>"><%= tag.name %></a><% } }) %></div>
+</aside></div>
